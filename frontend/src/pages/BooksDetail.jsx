@@ -59,17 +59,17 @@ export default function BookDetails() {
               alt={book.title}
             />
           </Box>
-          <Box ml="8">
+          <Box w='100%' h='200px' bgGradient='linear(to-l, #7928CA, #FF0080)' ml="8">
             <Heading as="h1" size="lg">
               {book.title}
             </Heading>
-            <Text fontSize="xl" fontWeight="semibold" color="gray.500">
+            <Text fontSize="xl" fontWeight="hairline" color="white">
               {book.author}
             </Text>
-            <Text fontSize="xl" fontWeight="semibold" color="gray.500">
+            <Text fontSize="xl" fontWeight="hairline" color="white">
               {book.publisher}
             </Text>
-            <Text fontSize="xl" fontWeight="semibold" color="gray.500" mb="4">
+            <Text fontSize="xl" fontWeight="hairline" color="white" mb="4">
               {book.year} | {book.pages} pages
             </Text>
           </Box>
@@ -79,7 +79,7 @@ export default function BookDetails() {
         <HStack>
           <Popover>
             <PopoverTrigger>
-              <Button colorScheme="red">Delete</Button>
+              <Button variant='outline' colorScheme="red">Delete</Button>
             </PopoverTrigger>
             <PopoverContent>
               <PopoverArrow />
@@ -94,7 +94,7 @@ export default function BookDetails() {
             </PopoverContent>
           </Popover>
           <Link to={`/editbook/${id}`}>
-            <Button>Edit</Button>
+            <Button variant='outline'>Edit</Button>
           </Link>
         </HStack>
       )}

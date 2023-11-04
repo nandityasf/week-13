@@ -34,6 +34,7 @@ const Navbar = () => {
     }
   }, [window.localStorage.getItem("token")]);
 
+ 
   return (
     <Flex
       w="full"
@@ -42,29 +43,30 @@ const Navbar = () => {
       justify="space-between"
       wrap="wrap"
       padding="1rem"
-      bg="teal.500"
+      bg="purple"
       color="white"
     >
       <Link to="/">
-        <Flex align="center" mr={5} cursor="pointer">
-          <Text fontSize="xl" fontWeight="bold">
-            My Website
+        <Flex align="center" cursor="pointer">
+          <Text as='u' fontSize="xl" fontWeight="semibold">
+           My Books
           </Text>
         </Flex>
       </Link>
-      <HStack>
         {isLogin && (
           <Link to="/newbook">
-            <Button colorScheme="blackAlpha">Create New Book</Button>
+            <Text as='u' fontSize="xl" fontWeight="semibold">Create Book</Text>
           </Link>
         )}
+      <HStack>
         {!isLogin ? (
-          <Button onClick={onOpen} colorScheme="blue">
+          <Button variant='outline' onClick={onOpen} colorScheme="white">
             Login
           </Button>
         ) : (
           <Button
-            colorScheme="blue"
+          variant='outline'
+            colorScheme="white"
             onClick={() => {
               window.localStorage.removeItem("token");
               setIsLogin(false);
@@ -140,5 +142,4 @@ const Navbar = () => {
     </Flex>
   );
 };
-
 export default Navbar;
